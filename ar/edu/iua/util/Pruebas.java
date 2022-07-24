@@ -58,6 +58,7 @@ public class Pruebas {
 
         server.startServer();
 
+        teclado.close();
 
 
 

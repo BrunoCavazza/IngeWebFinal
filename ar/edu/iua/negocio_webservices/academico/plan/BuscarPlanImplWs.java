@@ -7,9 +7,9 @@ import ar.edu.iua.persistencia.BaseDeDatos;
 public class BuscarPlanImplWs implements BuscarPlanWs{
     @Override
     public PlanWs buscar(int anio) throws BuscarPlanEx{
-        for(int ii = 0; ii < BaseDeDatos.planes.size(); ii++){
+        for(int ii = 0; ii < BaseDeDatos.planesSizeWs(); ii++){
             try {
-                if(BaseDeDatos.getPlan(ii).getAnio().intValue() == anio){
+                if(BaseDeDatos.getPlanWs(ii).getAnio().intValue() == anio){
                     return BaseDeDatos.getPlanWs(ii);
                 }
             } catch (CloneNotSupportedException e) {
