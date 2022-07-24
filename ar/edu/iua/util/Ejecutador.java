@@ -24,9 +24,10 @@ import java.util.Scanner;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.webServices.server;
 
+
 public class Ejecutador {
 
-    public void ejecutar() throws CrearPlanEx, BuscarPlanEx, ModificarPlanEx, serverEx {
+    public void ejecutar() throws CrearPlanEx, BuscarPlanEx, ModificarPlanEx, serverEx, CloneNotSupportedException {
 
         List<Plan> planes = GenerarEjemplosDePlanes.generar(5, false);
 
@@ -56,9 +57,11 @@ public class Ejecutador {
 
         buscarEImprimirPlanes.buscar(" Informática ' ");
 
+        Transformador.transformarPlan();
+
         server.startServer();
 
-
+        teclado.close();
 
 
     }

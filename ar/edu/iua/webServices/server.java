@@ -23,21 +23,19 @@ public class server {
     public static void startServer() throws serverEx{
 
         try{
-            HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-
-            //plan
-            server.createContext("/buscarPlan", new BuscarPlanHandler()); //http://localhost:8080/buscarPlan
-            server.createContext("/buscarPlanes", new BuscarPlanesHandler() ); //http://localhost:8080/buscarPlanes
-            server.createContext("/borrarPlan", new BorrarPlanHandler()); //http://localhost:8080/borrarPlan
-            server.createContext("/borrarPlanes", new BorrarPlanesHandler()); //http://localhost:8080/borrarPlanes
-            server.createContext("/crearPlan", new CrearPlanHandler()); //http://localhost:8080/crearPlan
-            server.createContext("/crearPlanes", new CrearPlanesHandler()); //http://localhost:8080/crearPlanes
-            server.createContext("/modificarPlan", new ModificarPlanHandler()); //http://localhost:8080/modificarPlan
-            server.createContext("/modificarPlanes", new ModificarPlanesHandler()); //http://localhost:8080/modificarPlanes
+            HttpServer server = HttpServer.create(new InetSocketAddress(8088), 0);
+            
+            //planaso
+            server.createContext("/buscarPlan", new BuscarPlanHandler()); 
+            server.createContext("/buscarPlanes", new BuscarPlanesHandler() ); 
+            server.createContext("/borrarPlan", new BorrarPlanHandler());
+            server.createContext("/borrarPlanes", new BorrarPlanesHandler());
+            server.createContext("/crearPlan", new CrearPlanHandler());
+            server.createContext("/crearPlanes", new CrearPlanesHandler());
+            server.createContext("/modificarPlan", new ModificarPlanHandler());
+            server.createContext("/modificarPlanes", new ModificarPlanesHandler());
            
-            
-            
-            server.setExecutor(null); // creates a default executor
+            server.setExecutor(null);
             server.start();            
             
             System.out.print("Servidor escuchando en ");
